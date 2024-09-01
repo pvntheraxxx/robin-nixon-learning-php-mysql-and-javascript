@@ -1,0 +1,34 @@
+<!-- Метод some -->
+<script>
+    /* Метод some используется, когда нужно узнать
+    соответствует ли хотя бы один элемент
+    определённому критерию */
+    function isBiggerThan10(element,index,array)
+    {
+        return element > 10
+    }
+    result = [2,5,8,1,4].some(isBiggerThan10);  // Результатом будет false
+    result = [12,5,8,1,4].some(isBiggerThan10); // Результатом будет true
+    document.write(result + "<br>");
+</script>
+
+<!-- Метод indexOf -->
+<script>
+    /* Для определения факта нахождения элемента в массиве
+    используется метод indexOf */
+    animals = ['кот','собака','корова','лошадь','слон'];
+    offset = animals.indexOf('кот');
+    document.write(offset + "<br>");
+</script>
+
+<!-- Метод concat -->
+<script>
+    /* Метод concat объединяет два массива или ряд значений в массив */
+    fruit = ["Банан","Виноград"];
+    veg = ["Морковь","Капуста"];
+    document.write(fruit.concat(veg + "<br>"));
+    /* Ещё один способ использования метода concat */
+    pets = ["Кошка","Собака","Рыба"];
+    more_pets = pets.concat("Кролик","Хомяк");
+    document.write(more_pets);
+</script>

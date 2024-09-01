@@ -1,0 +1,28 @@
+<!-- Пример 24.27. Создание исходного и наклонного изображений -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Создание исходного и наклонного изображений</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='OSC.js'></script>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="500" height="140"></canvas>
+        <script>
+            canvas = O('mycanvas')
+            context = canvas.getContext('2d')
+            S(canvas).background = 'lightblue'
+
+            myimage = new Image()
+            myimage.src = 'image.png'
+
+            myimage.onload = function()
+            {
+                context.drawImage(myimage,20,20)
+                context.transform(1,0,1,1,0,0)
+                context.drawImage(myimage,140,20)
+            }
+        </script>
+    </body>
+</html>

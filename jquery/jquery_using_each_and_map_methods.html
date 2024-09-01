@@ -1,0 +1,27 @@
+<!-- Пример 21.25. Вызов метода $.each -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Использование метода each</title>
+        <script src='jquery-3.7.1.min.js'></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <div id='info'></div>
+        <script>
+            pets = {
+                Scratchy: 'Guinea Pig',
+                Squeeky: 'Guinea Pig',
+                Fluffy: 'Rabbit',
+                Thumper: 'Rabbit',
+                Shoopy: 'Dog',
+                Tiddles: 'Cat'
+            }
+            guineapigs = []
+            $.each(pets,function(name,type){
+                if (type == 'Guinea Pig') guineapigs.push(name)
+            })
+            $('#info').html('Имена морских свинок: ' + guineapigs.join(' & '))
+        </script>
+    </body>
+</html>

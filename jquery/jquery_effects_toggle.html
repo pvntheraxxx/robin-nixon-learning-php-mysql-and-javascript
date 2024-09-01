@@ -1,0 +1,16 @@
+<!-- Пример 21.12. Использование метода toggle -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Эффекты: toggle</title>
+        <script src='jquery-3.7.1.min.js'></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <button id='toggle'>Изменить состояние</button>
+        <p id='text'>Нажмите кнопку "Изменить состояние"</p>
+        <script>
+            $('#toggle').click(function() { $('#text').toggle('slow','linear') })
+        </script>
+    </body>
+</html>

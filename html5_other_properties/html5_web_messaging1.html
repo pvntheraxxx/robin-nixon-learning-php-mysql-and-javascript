@@ -1,0 +1,21 @@
+<!-- Пример 26.6. Отправка веб-сообщений в iframe -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Веб-сообщения (A)</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='OSC.js'></script>
+    </head>
+    <body>
+        <iframe id="frame" src="html5_web_messaging2.html" width="360" height="75"></iframe>
+        <script>
+            count = 1
+      
+            setInterval(function()
+            {
+              O('frame').contentWindow.postMessage('Message ' + count++, '*')
+            }, 1000)   
+          </script>
+    </body>
+</html>

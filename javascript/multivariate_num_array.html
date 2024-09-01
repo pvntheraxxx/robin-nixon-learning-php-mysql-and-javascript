@@ -1,0 +1,27 @@
+<!-- Пример 15.10. Создание многомерного числового массива -->
+<script>
+    checkerboard = Array (
+        Array(' ', 'o',' ','o',' ','o',' ','o'),
+        Array('o', ' ','o',' ','o',' ','o',' '),
+        Array(' ', 'o',' ','o',' ','o',' ','o'),
+        Array(' ', ' ',' ',' ',' ',' ',' ',' '),
+        Array(' ', ' ',' ',' ',' ',' ',' ',' '),
+        Array(' ', ' ',' ',' ',' ',' ',' ',' '),
+        Array('o', ' ','o',' ','o',' ','o',' '),
+        Array(' ', 'o',' ','o',' ','o',' ','o'),
+        Array('o', ' ','o',' ','o',' ','o',' '));
+    document.write("<pre>");
+    for (j = 0 ; j < 9 ; j++)
+    {
+        for (k = 0 ; k < 9 ; ++k)
+            document.write(checkerboard[j][k] + " ") 
+        document.write("<br>");
+    }
+    document.write("</pre>");
+
+    let test_array = document.write(checkerboard[1][1]);
+    console.log(test_array);
+    console.log(typeof test_arrat);
+
+    
+</script>

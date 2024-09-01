@@ -1,0 +1,27 @@
+<!-- Пример 21.7. Перехват нажатия клавиш -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>События: keypress</title>
+        <script src='jquery-3.7.1.min.js'></script>
+    </head>
+    <body>
+        <h2>Нажмите какие-нибудь клавишиasd</h2>
+        <div id='result'></div>
+        <script>
+        $(document).keypress(function(event)
+        {
+            key = String.fromCharCode(event.which)
+
+            if (key >= 'a' && key <= 'z' ||
+                key >= 'A' && key <= 'Z' ||
+                key >= '0' && key <= '9')
+            {
+            $('#result').html('Вы нажали: ' + key)
+            event.preventDefault()
+        }
+        })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<!-- Пример 17.7. xml_get.html -->
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <head>
+        <title>Пример асинхронного обмена данными</title>
+    </head>
+    <body>
+        <h1>Загрузка XML-содержимого в div-контейнер</h1>
+        <div id='info'>Это предложение будет заменено</div>
+        <script>
+            let out = '';
+            let nocache = "&nocache=" + Math.random() * 1000000;
+            let url = "rss.news.yahoo.com/rss/topstories";
+            let request = new XMLHttpRequest();
+
+            request.open("GET","xml_get.php?url+" + url + nocache, true);
+            request.send();
+
+            request.onreadystatechange = function()
+            {
+                if (this.readyState == 4)
+                {
+                    if (this.status == 200)
+                    {
+                        if (this.responseText != null)
+                        {
+                            titles = this.responseXML.getElementsByName('title');
+
+                            for (j = 0; j < titles.length; ++j)
+                            {
+                                out += titles[j].childNodes[0].nodeValue + '<br>';
+                            }
+                            document.getElementById('info').innerHTML = out;
+                        } else alert("Ошибка обмена данными: данные не получены");
+                    } else alert("Ошибка обмена данными: " + this.statusText)
+                }
+            }      
+            request.send(null);
+
+            function asyncRequest()
+            {
+                try 
+                {
+                    var request = new XMLHttpRequest()
+                }
+                catch (e1)
+                {
+                    try 
+                    {
+                        request = new ActiveXObject("Msxml2.XMLHTTP")
+                    }
+                    catch (e2)
+                    {
+                        try 
+                        {
+                            request = new ActiveXObject("Microsoft.XMLHTTP")
+                        }
+                        catch(e3)
+                        {
+                            request = false;
+                        }
+                    }
+                }
+                return request;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!-- Пример 24.1. Отображение японского флага с помощью холста -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Холст HTML5</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='OSC.js'></script>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="320" height="240">
+            Этот элемент canvas с идентификатором <i>mycanvas</i>
+            Этот текст виден только в браузерах, не поддерживающих HTML5 
+        </canvas>
+        <script>
+            canvas = O('mycanvas')
+            context = canvas.getContext('2d')
+            context.fillStyle = 'red'
+            S(canvas).border = '1px solid back'
+
+            context.beginPath()
+            context.moveTo(160,120)
+            context.arc(160,120,70,0,Math.PI * 2,false)
+            context.closePath()
+            context.fill()
+        </script>
+    </body>
+</html>

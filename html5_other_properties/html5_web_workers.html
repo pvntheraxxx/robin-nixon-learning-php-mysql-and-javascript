@@ -1,0 +1,29 @@
+<!-- Пример 26.3. Настройка рабочего веб-процесса и обмен данными с ними -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Рабочие веб-процессы</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='OSC.js'></script>
+    </head>
+    <body>
+        Текущее самое большое простое число:
+        <span id="result">0</span>
+        <script>
+            if (!!window.Worker)
+            {
+                var worker = new Worker('worker.js')
+
+                worker.onmessage = function (event)
+                {
+                    O('result').innerText = event.data;
+                }
+            } 
+            else 
+            {
+                alert("Рабочие веб-процессы не поддерживаются")
+            }
+        </script>
+    </body>
+</html>

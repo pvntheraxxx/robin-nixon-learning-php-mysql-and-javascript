@@ -1,0 +1,125 @@
+﻿**********************
+Начало записи сценария Windows PowerShell
+Время начала: 20240608195953
+Имя пользователя: DESKTOP-EBHRMKT\pvntheraxxx
+Запуск от имени пользователя: DESKTOP-EBHRMKT\pvntheraxxx
+Имя конфигурации: 
+Компьютер: DESKTOP-EBHRMKT (Microsoft Windows NT 10.0.19045.0)
+Ведущее приложение: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ИД процесса: 3228
+PSVersion: 5.1.19041.1682
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.1682
+BuildVersion: 10.0.19041.1682
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Транскрибирование запущено, выходной файл C:\Users\pvntheraxxx\Documents\Web1\youtube_powershell\transcript.txt
+PS C:\Users\pvntheraxxx> Get-Netadapter
+
+Name                      InterfaceDescription                    ifIndex Status       MacAddress           LinkSpeed
+----                      --------------------                    ------- ------       ----------           ---------
+VirtualBox Host-Only N... VirtualBox Host-Only Ethernet Adapter        23 Up           0A-00-27-00-00-17       1 Gbps
+VMware Network Adapte...1 VMware Virtual Ethernet Adapter for ...      22 Up           00-50-56-C0-00-01     100 Mbps
+VMware Network Adapte...8 VMware Virtual Ethernet Adapter for ...      16 Up           00-50-56-C0-00-08     100 Mbps
+Ethernet 2                Killer E2500 Gigabit Ethernet Cont...#2      15 Disconnected 08-97-98-A3-E5-88        0 bps
+Беспроводная сеть         Intel(R) Wi-Fi 6 AX200 160MHz                10 Up           A8-7E-EA-72-86-C0     117 Mbps
+outline-tap0              TAP-Windows Adapter V9                        2 Disconnected 00-FF-01-96-0E-B5     100 Mbps
+
+
+PS C:\Users\pvntheraxxx> $nic = Get-Adapter
+Get-Adapter : Имя "Get-Adapter" не распознано как имя командлета, функции, файла сценария или выполняемой программы. Про
+верьте правильность написания имени, а также наличие и правильность пути, после чего повторите попытку.
+строка:1 знак:8
++ $nic = Get-Adapter
++        ~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-Adapter:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Get-Adapter : Имя "Get-Adapter" не распознано как имя командлета, функции, файла сценария или выполняемой программы.
+Проверьте правильность написания имени, а также наличие и правильность пути, после чего повторите попытку.
+строка:1 знак:8
++ $nic = Get-Adapter
++        ~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-Adapter:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\pvntheraxxx> clear
+PS C:\Users\pvntheraxxx> Get-Netadapter
+
+Name                      InterfaceDescription                    ifIndex Status       MacAddress           LinkSpeed
+----                      --------------------                    ------- ------       ----------           ---------
+VirtualBox Host-Only N... VirtualBox Host-Only Ethernet Adapter        23 Up           0A-00-27-00-00-17       1 Gbps
+VMware Network Adapte...1 VMware Virtual Ethernet Adapter for ...      22 Up           00-50-56-C0-00-01     100 Mbps
+VMware Network Adapte...8 VMware Virtual Ethernet Adapter for ...      16 Up           00-50-56-C0-00-08     100 Mbps
+Ethernet 2                Killer E2500 Gigabit Ethernet Cont...#2      15 Disconnected 08-97-98-A3-E5-88        0 bps
+Беспроводная сеть         Intel(R) Wi-Fi 6 AX200 160MHz                10 Up           A8-7E-EA-72-86-C0      52 Mbps
+outline-tap0              TAP-Windows Adapter V9                        2 Disconnected 00-FF-01-96-0E-B5     100 Mbps
+
+
+PS C:\Users\pvntheraxxx> $nic = Get-Netadapter;
+PS C:\Users\pvntheraxxx> $nic InterfaceDescription;
+строка:1 знак:6
++ $nic InterfaceDescription;
++      ~~~~~~~~~~~~~~~~~~~~
+Непредвиденная лексема "InterfaceDescription" в выражении или операторе.
+строка:1 знак:6
++ $nic InterfaceDescription;
++      ~~~~~~~~~~~~~~~~~~~~
+Непредвиденная лексема "InterfaceDescription" в выражении или операторе.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS C:\Users\pvntheraxxx> $nic InterfaceDescription
+строка:1 знак:6
++ $nic InterfaceDescription
++      ~~~~~~~~~~~~~~~~~~~~
+Непредвиденная лексема "InterfaceDescription" в выражении или операторе.
+строка:1 знак:6
++ $nic InterfaceDescription
++      ~~~~~~~~~~~~~~~~~~~~
+Непредвиденная лексема "InterfaceDescription" в выражении или операторе.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS C:\Users\pvntheraxxx> clear
+PS C:\Users\pvntheraxxx> $nic = Get-NetAdapter
+PS C:\Users\pvntheraxxx> $nic InterfaceDescription
+строка:1 знак:6
++ $nic InterfaceDescription
++      ~~~~~~~~~~~~~~~~~~~~
+Непредвиденная лексема "InterfaceDescription" в выражении или операторе.
+строка:1 знак:6
++ $nic InterfaceDescription
++      ~~~~~~~~~~~~~~~~~~~~
+Непредвиденная лексема "InterfaceDescription" в выражении или операторе.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS C:\Users\pvntheraxxx> $nic.InterfaceDescription
+VirtualBox Host-Only Ethernet Adapter
+VMware Virtual Ethernet Adapter for VMnet1
+VMware Virtual Ethernet Adapter for VMnet8
+Killer E2500 Gigabit Ethernet Controller #2
+Intel(R) Wi-Fi 6 AX200 160MHz
+TAP-Windows Adapter V9
+PS C:\Users\pvntheraxxx> $nic.MacAddress
+0A-00-27-00-00-17
+00-50-56-C0-00-01
+00-50-56-C0-00-08
+08-97-98-A3-E5-88
+A8-7E-EA-72-86-C0
+00-FF-01-96-0E-B5
+PS C:\Users\pvntheraxxx> $nic.LinkSpeed
+1 Gbps
+100 Mbps
+100 Mbps
+0 bps
+78 Mbps
+100 Mbps
+PS C:\Users\pvntheraxxx> Stop-Transcript
+**********************
+Конец записи протокола Windows PowerShell
+Время окончания: 20240608200613
+**********************

@@ -1,0 +1,28 @@
+<!-- Пример 26.7. Получение сообщений от другого документа -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Веб-сообщения (B)</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='OSC.js'></script>
+        <style>
+            #output {
+                font-family: 'Courier New', Courier, monospace;
+                white-space:pre;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="output">Полученные сообщения будут отображаться здесь</div>
+        <script>
+            window.onmessage = function(event)
+            {
+              O('output').innerHTML =
+                '<b>Origin:</b> ' + event.origin + '<br>' +
+                '<b>Source:</b> ' + event.source + '<br>' +
+                '<b>Data:</b>   ' + event.data
+            }
+          </script>
+    </body>
+</html>

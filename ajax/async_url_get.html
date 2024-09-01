@@ -1,0 +1,30 @@
+<!-- Пример 17.4. async_url_get.html -->
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <head>
+        <title>Пример асинхронного обмена данными</title>
+    </head>
+    <body style="text-align:center">
+        <h1>Загрузка веб-страницы в DIV-контейнер</h1>
+        <div id='info'>
+            Это предложение будет заменено
+        </div>
+        <script>
+
+            let nocache = "&nocache=" + Math.random() * 1000000;
+            let XHR = new XMLHttpRequest();
+
+            XHR.open("GET","async_url_get.php?url=news.com" + nocache,true);
+            XHR.send();
+
+            XHR.onreadystatechange = function()
+            {
+                if (this.readyState == 4 && this.status == 200)
+                {
+                    document.getElementById("info").innerHTML = this.responseText
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!-- Пример 21.10. Перехват события submit, происходящего в форме -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>События: submit</title>
+        <script src='jquery-3.7.1.min.js'></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <form id='form'>
+            Имя: <input id='fname' type='text' name='fname'><br>
+            Фамилия: <input id='lname' type='text' name='lname'><br>
+            <input type='submit'>
+        </form>
+        <script>
+            $('#form').submit(function()
+            {
+                if ($('#fname').val() == '' ||
+                    $('#lname').val() == ''
+                )
+                alert("Пожалуйста, введите имя и фамилию")
+                return false
+            })
+        </script>
+    </body>
+</html>

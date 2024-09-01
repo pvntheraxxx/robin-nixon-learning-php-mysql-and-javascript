@@ -1,0 +1,20 @@
+<!-- Пример 21.17. Изменение атрибутов с помощью метода attr -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The DOM: attr</title>
+        <script src='jquery-3.7.1.min.js'></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <h2>Пример документа</h2>
+        <p><a id='link' href='https://www.google.com/' title='Google'>
+            Посетите Google
+        </a></p>
+        <script>
+            $('#link').text('Посетите Yahoo')
+            $('#link').attr({ href:'https://www.yahoo.com/',title:'Yahoo'})
+            alert('Новый код HTML:\n' + $('p').html())
+        </script>
+    </body>
+</html>

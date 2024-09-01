@@ -1,0 +1,29 @@
+<!-- Пример 24.14. Создание вырезанной области -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Создание вырезанной области</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='OSC.js'></script>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="650" height="480"></canvas>
+        <script>
+            canvas = O('mycanvas')
+            context = canvas.getContext('2d')
+
+            context.beginPath()
+
+            for (j = 0 ; j < 10 ; ++j)
+            {
+                context.moveTo(20, j * 48)
+                context.lineTo(620, j * 48)
+                context.lineTo(620, j * 48 + 30)
+                context.lineTo(20, j * 48 + 30)
+            }
+            context.stroke()
+            context.closePath()
+        </script>
+    </body>
+</html>

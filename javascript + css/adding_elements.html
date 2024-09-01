@@ -1,0 +1,33 @@
+<!-- Пример 20.8. Вставка элемента в DOM -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Добавление элементов</title>
+        <script src='OSC.js'></script>
+    </head>
+    <body>
+        В этом элементе содержится только этот текст.<br><br>
+        <script>
+            alert('Для добавления элемента нажмите кнопку ОК');
+
+            newdiv    = document.createElement('div')
+            newdiv.id = 'NewDiv'
+            document.body.append(newdiv)
+
+            S(newdiv).border = 'solid 1px red';
+            S(newdiv).width = '100px';
+            S(newdiv).height = '100px';
+            newdiv.innerHTML = 'Это новый объект, вставленный в DOM';
+            tmp = newdiv.offsetTop;
+
+            setTimeout(function()
+            {
+                alert('Для удаления элемента нажмите кнопку OK');
+                
+                newdiv.parentNode.removeChild(newdiv)
+            }, 1000)
+
+        </script>
+    </body>
+</html>

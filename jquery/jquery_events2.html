@@ -1,0 +1,18 @@
+<!-- Пример 21.5. Использование событий focus и blur -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>События: blur</title>
+        <script src='jquery-3.7.1.min.js'></script>
+    </head>
+    <body>
+        <h2>Щёлкните в пределах и за пределами этих полей</h2>
+        <input id='first'> <input> <input> <input>
+        <script>
+            $('#first').focus();
+            $('input').focus(function() { $(this).css('background','#ff0')});
+            $('input').blur(function() { $(this).css('background','#aaa')});
+        </script>
+    </body>
+</html>

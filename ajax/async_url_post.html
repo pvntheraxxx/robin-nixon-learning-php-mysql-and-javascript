@@ -1,0 +1,74 @@
+<!-- Пример 17.2. async_url_post.html -->
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <head>
+        <title>Пример асинхронного обмена данными</title>
+    </head>
+    <body style="text-align:center">
+        <h1>Загрузка веб-страницы в контейнер DIV</h1>
+        <div id="info">Это предложение будет заменено</div>
+        <script>
+            params = "url = news.com";
+            request = new asyncRequest(); /* Создаётся AJAX-объект */
+            /* Экземпляр класса asyncRequest записывается
+               в переменную request */
+            request.open("POST", "async_url_post.php", true);
+            /* Метод open() класса asyncRequest, который находится 
+               в переменной request, используется для создания
+               запроса типа POST.
+               Запрос типа POST будет отправлен в PHP-программу
+               url_post.php */
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+            request.send("url=cnet.com")
+            /* Три строки кода выше являются свойствами 
+               класса asyncRequest(), который находится в переменной
+               request. Три строки кода выше необходимы для того,
+               чтобы получающий сервер знал о поступлении POST-запроса
+               */
+            request.onreadystatechange = function()
+            {
+                if (this.readyState == 4) 
+                {
+                    if (this.status == 200)
+                    {
+                        if (this.responseText != null)
+                        {
+                            document.getElementById('info').innerHTML = this.responseText
+                        }
+                        else alert("Ошибка обмена данными: данные не получены")
+                    }
+                    else alert("Ошибка обмена данными: " + this.statusText)
+                }
+            }
+            request.send(params);
+
+            function asyncRequest()
+            {
+                try 
+                {
+                    var request = new XMLHttpRequest();
+                }
+                catch (e1)
+                {
+                    try 
+                    {
+                        request = new ActiveXObject("Msxml2.XMLHTTP");
+                    }
+                    catch (e2)
+                    {
+                        try 
+                        {
+                            request = new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                        catch (e3)
+                        {
+                            request = false;
+                        }
+                    }
+                }
+                return request;
+            }
+        </script>
+    </body>
+</html>

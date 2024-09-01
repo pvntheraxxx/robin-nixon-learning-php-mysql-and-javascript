@@ -1,0 +1,30 @@
+<!-- Пример 17.1. Кросс-браузерная функция асинхронного обмена данными -->
+<script>
+    function asyncRequest()
+    {
+        try /* Браузер не относится к семейству IE? */
+        {   /* Да */
+            var request = new XMLHttpRequest()
+        }
+        catch (e1)
+        {
+            try /* Это IE 6+? */
+            {   /* Да */
+                request = new ActiveXObject("Msxml2.XMLHTTP")
+            }
+            catch (e2)
+            {
+                try /* Это IE 5? */
+                {   /* Да */
+                   request = new ActiveXObject("Microsoft.XMLHTTP") 
+                }
+                catch (e3) /* Данный браузер не поддерживает 
+                            асинхронный обмен данными */
+                {
+                    request = false;
+                }
+            }
+        }
+        return request
+    }
+</script>

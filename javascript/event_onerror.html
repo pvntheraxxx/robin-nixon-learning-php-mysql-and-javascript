@@ -1,0 +1,17 @@
+<!-- Пример 14.11. Сценарий, использующий событие onerror -->
+<script>
+    onerror = errorHandler;
+    document.write("Добро пожаловать на этот сайт") // Преднамеренная ошибка
+
+    function errorHandler(message,url,line)
+    {
+        out = "К сожалению, обнаружена ошибка. \n\n";
+        out += "Ошибка: " + message + "\n";
+        out += "URL: " + url + "\n";
+        out += "Строка: " + line + "\n\n";
+        out += "Нажмите кнопку ОК для продолжение работы. \n\n";
+        alert(out);
+        return true;
+    }
+
+</script>

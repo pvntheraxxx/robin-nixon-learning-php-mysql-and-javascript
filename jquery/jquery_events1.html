@@ -1,0 +1,19 @@
+<!-- Пример 21.3. Обработка события -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>События jQuery</title>
+        <script src='jquery-3.7.1.min.js'></script>
+    </head>
+    <body>
+        <button id='clickme'>Нажми меня</button>
+        <p id='result'>Я - абзац</p>
+        <script>
+            $('#clickme').click(function()
+            {
+                $('#result').html('Вы нажали кнопку!')
+            })
+        </script>
+    </body>
+</html>

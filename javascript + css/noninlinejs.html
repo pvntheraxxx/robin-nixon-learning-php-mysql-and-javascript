@@ -1,0 +1,16 @@
+<!-- Пример 20.7. Невстроенный JavaScript -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Невстроенный JavaScript</title>
+        <script src='OSC.js'></script>
+    </head>
+    <body>
+        <img id='object' src='apple.png'>
+
+        <script>
+            O('object').onmouseover = function() { this.src = 'orange.png' }
+            O('object').onmouseout  = function() { this.src = 'apple.png'  }
+        </script> 
+    </body>
+</html>

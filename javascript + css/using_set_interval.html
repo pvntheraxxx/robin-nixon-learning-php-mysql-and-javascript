@@ -1,0 +1,21 @@
+<!-- Пример 20.9. Часы, созданные с помощью прерываний -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Использование setInterval</title>
+        <script src='OSC.js'></script>
+    </head>
+    <body>
+        Текущее время: <span id='time'>00:00:00</span><br>
+        <script>
+            setInterval("showtime(O('time'))", 1000)
+      
+            function showtime(object)
+            {
+              var date = new Date()
+              object.innerHTML = date.toTimeString().substr(0,8)
+            }
+          </script>
+    </body>
+</html>

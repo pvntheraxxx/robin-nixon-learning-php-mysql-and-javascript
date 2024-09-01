@@ -1,0 +1,28 @@
+<!-- Пример 21.2. Использование jQuery с различными селекторами -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Второй пример jQuerys</title>
+        <script src='jquery-3.7.1.min.js'></script>
+    </head>
+    <body>
+        <blockquote>
+            При всей гибкости и эффективности JavaScript, а также
+            при всём изобилии имеющихся в этом языке встроенных функций
+            всё же сохраняется потребность в дополнительных уровнях кода,
+            позволяющих упростить, к примеру, получение эффектов анимации,
+            обработку событий и применение технологии асинхронного обмена
+            данными, то есть сделать то, чего нельзя достичь применением
+            обычных средств JavaScript или CSS.
+        </blockquote>
+        <div id='advert'>Это реклама</div>
+        <p>Это мой <span class='new'>новый</span> сайт</p>
+        <script>
+            $('blockquote').css('background','lime');
+            $('#advert').css('border','3px dashed red');
+            $('.new').css('text-decoration','underline');
+            $('blockquote,#advert,.new').css('font-weight','bold');
+        </script>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+Форматирование вывода в Windows Powershell
+
+Комндлеты :
+Format-Hex
+Format-Custom
+Format-List
+Format-Table
+Format-Wide 
+
+Format-Valume 
+Format-SecureBootUEFI

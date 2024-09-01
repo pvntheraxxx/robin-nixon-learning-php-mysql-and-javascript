@@ -1,0 +1,18 @@
+<!-- Пример 21.11. Исчезновение и появление элемента -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Эффекты: hide и show</title>
+        <script src='jquery-3.7.1.min.js'></script>
+    </head>
+    <body>
+        <button id='hide'>Спрятать</button>
+        <button id="show">Показать</button>
+        <p id='text'>Щёлкните на кнопках Спрятать и Показать</p>
+        <script>
+            $('#hide').click(function() { $('#text').hide('slow','linear')})
+            $('#show').click(function() { $('#text').show('slow','linear')})
+        </script>
+    </body>
+</html>

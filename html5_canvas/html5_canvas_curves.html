@@ -1,0 +1,31 @@
+<!-- Пример 24.18. Рисование облака с кривыми второго порядка -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Рисование облака с кривыми второго порядка</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='OSC.js'></script>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="480" height="240"></canvas>
+        <script>
+            canvas = O('mycanvas') // Получаем объект mycanvas через функцию O, в которой есть GetElementByID
+            context = canvas.getContext('2d')
+            S(canvas).background = 'lightblue'
+
+            context.beginPath()
+            context.moveTo(180,60)
+            context.quadraticCurveTo(240,0,300,60)
+            context.quadraticCurveTo(460,30,420,100)
+            context.quadraticCurveTo(480,210,340,170)
+            context.quadraticCurveTo(240,240,200,170)
+            context.quadraticCurveTo(100,200,140,130)
+            context.quadraticCurveTo(40,40,180,60)
+            context.fillStyle = 'white'
+            context.fill()
+            context.closePath()
+
+        </script>
+    </body>
+</html>

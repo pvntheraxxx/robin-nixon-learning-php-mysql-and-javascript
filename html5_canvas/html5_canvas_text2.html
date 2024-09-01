@@ -1,0 +1,28 @@
+<!-- Пример 24.11. Заливка текста с помощью узора -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Заливка текста</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='OSC.js'></script>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="800" height="160"></canvas>
+        <script>
+            canvas = O('mycanvas')
+            context = canvas.getContext('2d')
+            context.font = 'bold 140px Times'
+            context.textBaseline = 'top'
+            image = new Image()
+            image.src = 'wicker.jpg'
+            image.onload = function()
+            {
+                pattern = context.createPattern(image,'repeat')
+                context.fillStyle = pattern 
+                context.fillText('WickerpediA',0,0)
+                context.strokeText('WickerpediA',0,0)
+            }
+        </script>
+    </body>
+</html>

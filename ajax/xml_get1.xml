@@ -1,0 +1,21 @@
+<!-- Пример 17.8. Документ XML -->
+<?xml version='1.0' encoding="UTF-8"?>
+    <rss version="2.0">
+        <channel>
+            <title>RSS-поток</title>
+            <link>https://github.com/</link>
+            <description>RSS-поток https://github.com/</description>
+            <pubDate>Понедельник, 11 Мая 2020 года, 00:00:00 GMT</pubDate>
+                <item>
+                    <title>Заголовок 1</title>
+                    <guid>https://github.com/</guid>
+                    <description>Это заголовок 1</description>
+                </item>
+                <item>
+                    <title>Заголовок 2</title>
+                    <guid>https://github.com/</guid>
+                    <description>Это заголовок 2</description>
+                </item>
+
+        </channel>
+    </rss>

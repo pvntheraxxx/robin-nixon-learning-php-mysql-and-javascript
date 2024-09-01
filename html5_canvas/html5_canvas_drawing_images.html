@@ -1,0 +1,30 @@
+<!-- Пример 24.20. Различные способы рисования изображения на холсте -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Рисование изображения на холсте</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='OSC.js'></script>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="480" height="260"></canvas>
+        <script>
+            canvas = O('mycanvas')
+            context = canvas.getContext('2d')
+            S(canvas).background = 'lightblue'
+            
+            myimage = new Image()
+            myimage.src = 'image.png'
+
+            myimage.onload = function()
+            {
+                context.drawImage(myimage, 20, 20)
+                context.drawImage(myimage, 140,20,220,220)
+                context.drawImage(myimage, 30, 30, 40, 20, 140, 100, 100)
+                
+                context.drawImage(canvas,0,0,480,260,20,140,100,100)
+            }
+        </script>
+    </body>
+</html>
